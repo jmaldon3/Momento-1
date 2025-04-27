@@ -1,0 +1,22 @@
+ Requerimientos Funcionale
+1. Registro de Productos: El sistema deberá facilitar el registro de productos, incluyendo sus identificadores, nombres y precios.
+2. Registro de Movimientos: Se requerirá que el sistema registre tanto las entradas como las salidas de productos, especificando la cantidad y el proveedor o destino.
+3. Actualización de Inventario: El sistema deberá actualizar automáticamente la cantidad de productos disponibles en inventario tras cada movimiento registrado.
+4. Cálculo del Valor Total: Será necesario que el sistema calcule el valor total de los productos que han salido del inventario.
+5. Consulta de Inventario: El sistema debe permitir a los usuarios consultar la cantidad actual de productos disponibles en el inventario.
+
+Requerimientos No Funcionales
+1. Interfaz de Usuario: La interfaz del sistema tiene que ser intuitiva y fácil de utilizar para los usuarios.
+2. Validación de Datos: Es esencial que el sistema valide la información ingresada por los usuarios, asegurando su precisión y coherencia.
+3. Seguridad: El sistema debe garantizar la seguridad de la información relacionada con productos y movimientos, protegiendo datos sensibles.
+4. Rendimiento: Se espera que el sistema opere con rapidez y eficiencia en todas sus funciones.
+
+Requerimientos de Usuario
+1. Facilidad de Uso: El sistema tiene que ser accesible y fácil de manejar, incluso para usuarios sin experiencia previa en sistemas de inventario.
+2. Información Precisa: Es crucial que el sistema ofrezca información exacta y actualizada sobre el estado del inventario.
+3. Alertas y Notificaciones: El sistema debe enviar alertas y notificaciones en el momento que ocurran movimientos significativos en el inventario.
+
+Requerimientos de Negocio
+1. Gestión de Inventario: El sistema tendrá que permitir a los administradores gestionar el inventario de manera eficiente y efectiva.
+2. Análisis de Datos: Se espera que el sistema permita el análisis de los datos relacionados con movimientos y estoque, facilitando decisiones informadas.
+3. Reducción de Costos: El sistema deberá contribuir a disminuir los costos asociados con la gestión del inventario.
