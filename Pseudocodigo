@@ -1,0 +1,83 @@
+
+
+INICIO
+  DEFINIR variables:
+    - idProducto: entero
+    - nombreProducto: cadena
+    - valorProducto: real
+    - cantidad: entero
+    - tipoMovimiento: entero (1 para entrada, 2 para salida)
+    - repetir: booleano
+    - inventarioCantidad: entero
+
+  INICIALIZAR variables:
+    - repetir = VERDADERO
+    - inventarioCantidad = 0
+    - idProducto = 0
+
+  MIENTRAS repetir = VERDADERO HACER
+    IMPRIMIR "Menú de opciones:"
+    IMPRIMIR "1. Registrar producto"
+    IMPRIMIR "2. Actualizar inventario"
+    IMPRIMIR "3. Sacar producto"
+    IMPRIMIR "4. Ver cantidad en inventario"
+    IMPRIMIR "5. Salir"
+
+    LEER opcion
+
+    SEGÚN opcion HACER
+      CASO 1:
+        LEER idProducto
+        LEER nombreProducto
+        LEER valorProducto
+        IMPRIMIR "Producto registrado con éxito"
+        inventarioCantidad = 0
+      CASO 2:
+        SI idProducto = 0 ENTONCES
+          IMPRIMIR "Debe registrar un producto primero"
+        SINO
+          LEER tipoMovimiento
+          LEER cantidad
+          SI tipoMovimiento = 1 ENTONCES
+            inventarioCantidad = inventarioCantidad + cantidad
+            IMPRIMIR "Producto con id ", idProducto, " ha sido registrado con una entrada de ", cantidad, " unidades"
+          SINO SI tipoMovimiento = 2 ENTONCES
+            SI inventarioCantidad >= cantidad ENTONCES
+              inventarioCantidad = inventarioCantidad - cantidad
+              IMPRIMIR "Producto con id ", idProducto, " ha sido registrado con una salida de ", cantidad, " unidades"
+              IMPRIMIR "Valor total de la salida: $", cantidad * valorProducto
+            SINO
+              IMPRIMIR "No hay suficiente cantidad en inventario para realizar la salida"
+            FIN SI
+          SINO
+            IMPRIMIR "Tipo de movimiento inválido"
+          FIN SI
+          IMPRIMIR "Cantidad actual en inventario: ", inventarioCantidad
+        FIN SI
+      CASO 3:
+        SI idProducto = 0 ENTONCES
+          IMPRIMIR "Debe registrar un producto primero"
+        SINO
+          LEER cantidad
+          SI inventarioCantidad >= cantidad ENTONCES
+            inventarioCantidad = inventarioCantidad - cantidad
+            IMPRIMIR "Producto con id ", idProducto, " ha sido registrado con una salida de ", cantidad, " unidades"
+            IMPRIMIR "Valor total de la salida: $", cantidad * valorProducto
+            IMPRIMIR "Cantidad actual en inventario: ", inventarioCantidad
+          SINO
+            IMPRIMIR "No hay suficiente cantidad en inventario para realizar la salida"
+          FIN SI
+        FIN SI
+      CASO 4:
+        SI idProducto = 0 ENTONCES
+          IMPRIMIR "Debe registrar un producto primero"
+        SINO
+          IMPRIMIR "Cantidad en inventario: ", inventarioCantidad
+        FIN SI
+      CASO 5:
+        repetir = FALSO
+      DE OTRO MODO:
+        IMPRIMIR "Opción inválida"
+    FIN SEGÚN
+  FIN MIENTRAS
+FIN
